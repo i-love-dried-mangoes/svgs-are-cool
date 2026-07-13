@@ -11,27 +11,47 @@ body {
 }
 
 h1 {
-    color: rgb(255, 184, 255);
+  color: rgb(255, 184, 255);
 }
 
-circle {
-    fill: rgb(69, 0, 69);
+.circle-item svg circle {
+  fill: rgb(69, 0, 69);
+  transition: fill 0.3s ease, transform 0.3s ease;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 div.circlesss {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+div.circle-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+  width: 180px;
+}
 
-div.circles {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 5px;
-    /*border: 1px solid #ccc;*/
-    width: 180px;
+/* circle hover effects */
+
+#circle1 svg:hover circle {
+  fill: #3b82f6;
+}
+
+#circle2 svg:hover circle {
+  animation: bounce 0.5s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+#circle3 svg:hover circle {
+  transform: scale(1.4);
 }
