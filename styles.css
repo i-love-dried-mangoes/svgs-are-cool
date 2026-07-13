@@ -1,13 +1,43 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 16px;
   align-items: center;
-  height: 100vh;
   background: rgb(33, 0, 33);
   color: white;
   font-family: Helvetica;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 100vh;
+  width: 100%;
+}
+
+.scroll-link {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 184, 255);
+  text-decoration: none;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgb(255, 184, 255);
+  }
+  50% {
+    text-shadow: 0 0 14px rgb(255, 184, 255), 0 0 24px rgb(255, 184, 255);
+  }
 }
 
 h1 {
@@ -40,18 +70,56 @@ div.circle-item {
 /* circle hover effects */
 
 #circle1 svg:hover circle {
-  fill: #3b82f6;
+  fill: #003385;
 }
 
 #circle2 svg:hover circle {
-  animation: bounce 0.5s ease infinite;
+  animation: bounce 2s ease 0s infinite alternate-reverse none;
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  30% {
+    animation-timing-function: ease-in;
+    transform: translateY(-18px);
+  }
+
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  65% {
+    animation-timing-function: ease-in;
+    transform: translateY(-10px);
+  }
+
+  80% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  90% {
+    animation-timing-function: ease-in;
+    transform: translateY(-4px);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #circle3 svg:hover circle {
   transform: scale(1.4);
+}
+
+#rectangles:hover * {
+  fill: #003385;
 }
