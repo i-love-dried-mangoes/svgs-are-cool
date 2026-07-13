@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  height: 100vh;
+  background: rgb(33, 0, 33);
+  color: white;
+  font-family: Helvetica;
+}
+
+h1 {
+    color: rgb(255, 184, 255);
+}
+
+circle {
+    fill: rgb(69, 0, 69);
+}
+
+div.circlesss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div.circles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    /*border: 1px solid #ccc;*/
+    width: 180px;
+}
